@@ -43,4 +43,3 @@ window.addEventListener("scroll", () => {
 });
 
 // Initial load
-loadMoreSections();

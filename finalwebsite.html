@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ephemeral Histories</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #ffefdf;
+      display: flex;
+      flex-direction: column;
+    }
+    .slides {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+    .slide {
+      width: 100%;
+    }
+    .slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Slider styles */
+    .slider-container {
+      display: grid;
+      width: 50%;           
+      margin: 40px auto;   
+    }
+    .slider-container img {
+      grid-area: 1/1;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 50%;           
+      margin: 10px auto;    
+      background: transparent;
+      display: block;
+    }
+    input[type="range"]:focus {
+      outline: none;
+    }
+    /* Track */
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 4px;
+      cursor: pointer;
+      background: #888;
+      border-radius: 2px;
+    }
+    input[type="range"]::-moz-range-track {
+      height: 4px;
+      cursor: pointer;
+      background: #888;
+      border-radius: 2px;
+    }
+    /* Thumb */
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      background: #444;
+      cursor: pointer;
+      margin-top: -4px;
+      border-radius: 0;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      background: #444;
+      cursor: pointer;
+      border: none;
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slides">
+    <div class="slide"><img src=".../images/websitetemplate.jpg"   alt="Slide 1"></div>
+    <div class="slide"><img src=".../images/websitetemplate2.jpg"  alt="Slide 2"></div>
+    <div class="slide"><img src=".../images/websitetemplate3.jpg"  alt="Slide 3"></div>
+    <div class="slide"><img src=".../images/websitetemplate4.jpg"  alt="Slide 4"></div>
+    <div class="slide"><img src=".../images/websitetemplate5.jpg"  alt="Slide 5"></div>
+    <div class="slide"><img src=".../images/websitetemplate6.jpg"  alt="Slide 6"></div>
+    <div class="slide"><img src=".../images/websitetemplate7.jpg"  alt="Slide 7"></div>
+    <div class="slide"><img src=".../images/websitetemplate8.jpg"  alt="Slide 8"></div>
+    <div class="slide"><img src=".../images/websitetemplate9.jpg"  alt="Slide 9"></div>
+  </div>
+
+  <div class="slider-container">
+    <img id="bottomImg" src=".../images/beforemap.jpg" alt="Before Map">
+    <img id="topImg"    src=".../images/aftermap.jpg"  alt="After Map" style="opacity:0;">
+  </div>
+  <input
+    type="range"
+    id="fadeRange"
+    min="0"
+    max="100"
+    value="0"
+  >
+
+  <script>
+    document.getElementById('fadeRange').addEventListener('input', e => {
+      document.getElementById('topImg').style.opacity = e.target.value / 100;
+    });
+  </script>
+
+  <div class="slides">
+    <div class="slide"><img src=".../images/websitetemplate11.jpg" alt="Slide 11"></div>
+    <div class="slide"><img src=".../images/websitetemplate12.jpg" alt="Slide 12"></div>
+    <div class="slide"><img src=".../images/websitetemplate13.jpg" alt="Slide 13"></div>
+    <div class="slide"><img src=".../images/websitetemplate14.jpg" alt="Slide 14"></div>
+  </div>
+
+</body>
+</html>
